@@ -1,0 +1,9 @@
+# robots.txt for tools.notnicto.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tools.notnicto.com/sitemap.xml
+
+# Crawl delay for all bots
+Crawl-delay: 1 

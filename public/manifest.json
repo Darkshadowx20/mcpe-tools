@@ -1,0 +1,23 @@
+{
+  "name": "MCPE Tools",
+  "short_name": "MCPE Tools",
+  "description": "Tools and utilities for Minecraft Pocket Edition players",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0b10",
+  "theme_color": "#4d5bce",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+} 
