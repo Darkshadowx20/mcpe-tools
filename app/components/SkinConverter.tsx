@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import JSZip from 'jszip';
+import { TextureMapping, skinToTotemMapping } from '../api/convert-totem/totem-mapping';
 
 interface ConversionResult {
   totemSkin: string | null;
@@ -16,116 +17,6 @@ interface ApiErrorResponse {
 interface ApiSuccessResponse {
   skinBase64: string;
 }
-
-// Skin to totem mapping
-interface TextureMapping {
-  srcX: number;
-  srcY: number;
-  srcWidth: number;
-  srcHeight: number;
-  destX: number;
-  destY: number;
-  destWidth: number;
-  destHeight: number;
-}
-
-const skinToTotemMapping: Record<string, TextureMapping> = {
-  // Face (front of head)
-  face: {
-    srcX: 8,
-    srcY: 8,
-    srcWidth: 8,
-    srcHeight: 8,
-    destX: 4,
-    destY: 0,
-    destWidth: 8,
-    destHeight: 8
-  },
-  
-  // Face overlay - second layer
-  faceOverlay: {
-    srcX: 40, 
-    srcY: 8,
-    srcWidth: 8,
-    srcHeight: 8,
-    destX: 4,
-    destY: 0,
-    destWidth: 8,
-    destHeight: 8
-  },
-  
-  // Front of body
-  bodyFront: {
-    srcX: 20,
-    srcY: 20,
-    srcWidth: 8,
-    srcHeight: 12,
-    destX: 4,
-    destY: 8,
-    destWidth: 8, 
-    destHeight: 7
-  },
-  
-  // Body overlay - second layer
-  bodyOverlay: {
-    srcX: 20,
-    srcY: 36,
-    srcWidth: 8,
-    srcHeight: 12,
-    destX: 4,
-    destY: 8,
-    destWidth: 8,
-    destHeight: 7
-  },
-  
-  // Right arm (which appears on the left when looking at the skin)
-  rightArm: {
-    srcX: 44,
-    srcY: 20,
-    srcWidth: 4,
-    srcHeight: 12,
-    destX: 1,
-    destY: 8,
-    destWidth: 3,
-    destHeight: 5
-  },
-  
-  // Right arm overlay
-  rightArmOverlay: {
-    srcX: 44,
-    srcY: 36,
-    srcWidth: 4,
-    srcHeight: 12,
-    destX: 1,
-    destY: 8,
-    destWidth: 3,
-    destHeight: 5
-  },
-  
-  // Left arm (which appears on the right when looking at the skin)
-  leftArm: {
-    srcX: 36,
-    srcY: 52,
-    srcWidth: 4,
-    srcHeight: 12,
-    destX: 12,
-    destY: 8,
-    destWidth: 3,
-    destHeight: 5
-  },
-  
-  // Left arm overlay
-  leftArmOverlay: {
-    srcX: 52,
-    srcY: 52,
-    srcWidth: 4,
-    srcHeight: 12,
-    destX: 12,
-    destY: 8,
-    destWidth: 3,
-    destHeight: 5
-  }
-};
 
 export default function SkinConverter() {
   const [file, setFile] = useState<File | null>(null);
