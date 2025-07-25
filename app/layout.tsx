@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: 'Free tools and utilities for Minecraft Pocket Edition players - convert skins to totems, create texture packs and more.',
     images: [
       {
-        url: 'https://tools.notnicto.com/og-image.png',
+        url: 'https://tools.notnicto.com/logo.png',
         width: 1200,
         height: 630,
         alt: 'MCPE Tools',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'MCPE Tools - Minecraft Pocket Edition Utilities',
     description: 'Free tools and utilities for Minecraft Pocket Edition players - convert skins to totems, create texture packs and more.',
-    images: ['https://tools.notnicto.com/og-image.png'],
+    images: ['https://tools.notnicto.com/logo.png'],
   },
   alternates: {
     canonical: 'https://tools.notnicto.com',

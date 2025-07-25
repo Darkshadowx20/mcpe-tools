@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import JSZip from 'jszip';
-import { TextureMapping, skinToTotemMapping } from '../api/convert-totem/totem-mapping';
+import { skinToTotemMapping } from '../api/convert-totem/totem-mapping';
 
 interface ConversionResult {
   totemSkin: string | null;
